@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Olorin Printer Settings</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/options.css">
+<body>
+  <div class="container position-absolute top-50 start-50 translate-middle">
+  <div class="top-head">
+    <h1>Printer Settings</h1>
+    <button  class="btn btn-primary" id="refresh">Refresh Printers</button>
+  </div>
+  <form id="printer" method="post">
+    <div class="form-group">
+    <div class="input-group">
+      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="receipt_printer" value="Receipt Printer" disabled />
+      <div class="input-group-addon">
+        <select class="form-control" name="receipt_printer_option" id="receipt_printer_option">
+          <option>Select</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="sticker_printer" value="Sticker Printer" disabled/>
+      <div class="input-group-addon">
+        <select class="form-control" name="sticker_printer_option" id="sticker_printer_option">
+          <option>Select</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="paper_printer" value="Paper Printer" disabled/>
+      <div class="input-group-addon">
+        <select class="form-control" name="paper_printer_option" id="paper_printer_option">
+          <option>Select</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="full_sheet_printer" value="Full Sheet Printer" disabled/>
+      <div class="input-group-addon">
+        <select class="form-control" name="full_sheet_printer_option" id="full_sheet_printer_option">
+          <option>Select</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="label_printer" value="Label Printer" disabled/>
+      <div class="input-group-addon">
+        <select class="form-control" name="label_printer_option" id="label_printer_option">
+          <option>Select</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group justify-content-end save-btn-wrap">
+    <span id ="save-msg">Printer Mapping Saved Successfully</span>
+    <button type="submit" class="btn btn-primary" id="saveData">save</button>
+  </div>
+  </form>
+</div>
+  <script src="js/jquery.min.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
