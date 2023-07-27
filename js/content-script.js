@@ -4,7 +4,7 @@
 //   };
 
  $(document).ready(function() {
-	$("#webPrint").on("click", function(event) {
+	$("#webPrint, .olorinPlugin").on("click", function(event) {
 		var printer = $(this).data('printer');
 		var printDiv = $(this).data('print');
 		console.log(printer)
