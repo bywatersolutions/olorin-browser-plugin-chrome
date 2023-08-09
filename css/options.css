@@ -6,7 +6,7 @@
     background: transparent;
 }
 #wrapped+.input-group-addon>.form-control {
-    border-radius: 0 .4rem .4rem 0;
+    border-radius: 0;
     border-left: none;
 }
 
@@ -88,16 +88,44 @@ button#saveData {
     border-radius: 0;
 }
 .container {
-    max-width: 680px;
+    max-width: 900px;
     background: #fff;
     padding: 15px 10px;
-    border-radius: 3px;
+    border-radius: 0px;
 }
 .save-btn-wrap {
     border-top: 1px solid #ccc;
     margin-top: 15px;
     margin-bottom: 0;
 }
+.d-flex {display: flex;}
+.justify-between {justify-content: space-between;}
+.full-width, .input-row {width: 100%; max-width: 100%;}
+.no-radius {border-radius: 0;}
+.pl-0 {padding-left: 0!important;}
+input.no-radius {box-shadow: none;}
+.label-group {font-weight: 600;}
+.label-group, .frm-input-wrap {display: flex;width:100%;background-color: #eee;padding: 5px 0;align-items: center;}
+.label-group {padding: 0;}
+.mwt {background-color: #ccc; padding: 3px 0;}
+.mwb {background-color: #ddd;padding: 3px 0;}
+.frm-input-wrap {background-color: transparent;}
+.label-group .col,
+.frm-input-wrap .col {width: 14%;text-align: center;font-size: 11px;text-transform: uppercase;}
+.margin-wrap {display: flex;width:100%;justify-content: space-between;}
+.margin-wrap .col {width: 25%;padding: 0;}
+.full-width {width:100% !important;}
+.form-control:focus {box-shadow: none;border-color: #ccc;}
+select.form-control, 
+select.form-control option {border-radius: 0!important;padding: 3px 0;}
+.frm-input-wrap {text-transform: capitalize!important;}
+.printer-name {font-size: 13px!important;text-transform: capitalize!important;}
+.frm-input-wrap input.col {font-size: 14px!important;text-transform: capitalize;}
+
+
+
+
+
 @media (max-width: 767px) {
     .container,
     #printer input[type="text"],

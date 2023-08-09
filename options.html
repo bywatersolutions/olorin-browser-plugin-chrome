@@ -12,53 +12,141 @@
     <button  class="btn btn-primary" id="refresh">Refresh Printers</button>
   </div>
   <form id="printer" method="post">
+    <div class="label-group">
+      <div class="col">Printer</div>
+      <div class="col">Page Width</div>
+      <div class="col">Page Height</div>
+      <div class="col">Printer Option</div>
+      <div class="col" style="width: 30%;">
+        <div class="margin-wrap mwt">
+          <div class="col full-width">Margin</div>
+        </div>
+        <div class="margin-wrap mwb">
+          <div class="col">Top</div>
+          <div class="col">Bottom</div>
+          <div class="col">Left</div>
+          <div class="col">Right</div>
+        </div>
+      </div>
+      <div class="col">Orientation</div>
+    </div>
     <div class="form-group">
-    <div class="input-group">
-      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="receipt_printer" value="Receipt Printer" disabled />
-      <div class="input-group-addon">
-        <select class="form-control" name="receipt_printer_option" id="receipt_printer_option">
+      <div class="input-row">
+        <div class="frm-input-wrap">
+          <input id="wrapped" class="col form-control printer-name" type="text" placeholder="Printer Label" name="receipt_printer" value="Receipt Printer" disabled />   
+          <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Width (In)" name="receipt_printer_width" id="receipt_printer_width"/>
+          <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Height (In)" name="receipt_printer_height" id="receipt_printer_height"/>
+          <select class="col form-control" name="receipt_printer_option" id="receipt_printer_option">
+            <option>Select</option>
+          </select>
+          <div class="margin-wrap" style="width: 30%;">
+              <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="receipt_printer_margin_top" id="receipt_printer_margin_top"/>
+              <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="receipt_printer_margin_bottom" id="receipt_printer_margin_bottom"/>
+              <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="receipt_printer_margin_left" id="receipt_printer_margin_left"/>
+              <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="receipt_printer_margin_right" id="receipt_printer_margin_right"/>
+          </div>
+          <select class="col form-control" name="receipt_printer_orientation" id="receipt_printer_orientation">
+            <option>Select</option>
+            <option>Portrait</option>
+            <option>Landscape</option>
+            <option>Automatic</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  <div class="form-group">
+    <div class="input-row">
+      <div class="frm-input-wrap">
+      <input id="wrapped" class="col form-control" type="text" placeholder="Printer Label" name="sticker_printer" value="Sticker Printer" disabled/>
+      <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Width (In)" name="sticker_printer_width" id="sticker_printer_width"/>
+          <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Height (In)" name="sticker_printer_height" id="sticker_printer_height"/>
+        <select class="col form-control" name="sticker_printer_option" id="sticker_printer_option">
           <option>Select</option>
         </select>
+        <div class="margin-wrap" style="width: 30%;">
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="sticker_printer_margin_top" id="sticker_printer_margin_top"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="sticker_printer_margin_bottom" id="sticker_printer_margin_bottom"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="sticker_printer_margin_left" id="sticker_printer_margin_left"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="sticker_printer_margin_right" id="sticker_printer_margin_right"/>
+      </div>
+      <select class="col form-control" name="sticker_printer_orientation" id="sticker_printer_orientation">
+        <option>Select</option>
+        <option value="Portrait">Portrait</option>
+        <option value="Landscape">Landscape</option>
+        <option value="Automatic">Automatic</option>
+      </select>
       </div>
     </div>
   </div>
   <div class="form-group">
-    <div class="input-group">
-      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="sticker_printer" value="Sticker Printer" disabled/>
-      <div class="input-group-addon">
-        <select class="form-control" name="sticker_printer_option" id="sticker_printer_option">
+    <div class="input-row">
+      <div class="frm-input-wrap">
+      <input id="wrapped" class="col form-control" type="text" placeholder="Printer Label" name="paper_printer" value="Paper Printer" disabled/>
+      <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Width (In)" name="paper_printer_width" id="paper_printer_width"/>  
+      <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Height (In)" name="paper_printer_height" id="paper_printer_height"/>
+      <select class="col form-control" name="paper_printer_option" id="paper_printer_option">
           <option>Select</option>
         </select>
+        <div class="margin-wrap" style="width: 30%;">
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="paper_printer_margin_top" id="paper_printer_margin_top"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="paper_printer_margin_bottom" id="paper_printer_margin_bottom"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="paper_printer_margin_left" id="paper_printer_margin_left"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="paper_printer_margin_right" id="paper_printer_margin_right"/>
+      </div>
+      <select class="col form-control" name="paper_printer_orientation" id="paper_printer_orientation">
+        <option>Select</option>
+        <option value="Portrait">Portrait</option>
+        <option value="Landscape">Landscape</option>
+        <option value="Automatic">Automatic</option>
+      </select>
       </div>
     </div>
   </div>
   <div class="form-group">
-    <div class="input-group">
-      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="paper_printer" value="Paper Printer" disabled/>
-      <div class="input-group-addon">
-        <select class="form-control" name="paper_printer_option" id="paper_printer_option">
+    <div class="input-row">
+      <div class="frm-input-wrap">
+      <input id="wrapped" class="col form-control" type="text" placeholder="Printer Label" name="full_sheet_printer" value="Full Sheet Printer" disabled/>
+      <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Width (In)" name="full_sheet_printer_width" id="full_sheet_printer_width"/>  
+      <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Height (In)" name="full_sheet_printer_height" id="full_sheet_printer_height"/>
+        <select class="col form-control" name="full_sheet_printer_option" id="full_sheet_printer_option">
           <option>Select</option>
         </select>
+        <div class="margin-wrap" style="width: 30%;">
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="full_sheet_printer_margin_top" id="full_sheet_printer_margin_top"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="full_sheet_printer_margin_bottom" id="full_sheet_printer_margin_bottom"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="full_sheet_printer_margin_left" id="full_sheet_printer_margin_left"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="(In)" name="full_sheet_printer_margin_right" id="full_sheet_printer_margin_right"/>
+      </div>
+      <select class="col form-control" name="full_sheet_printer_orientation" id="full_sheet_printer_orientation">
+        <option>Select</option>
+        <option value="Portrait">Portrait</option>
+        <option value="Landscape">Landscape</option>
+        <option value="Automatic">Automatic</option>
+      </select>
       </div>
     </div>
   </div>
   <div class="form-group">
-    <div class="input-group">
-      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="full_sheet_printer" value="Full Sheet Printer" disabled/>
-      <div class="input-group-addon">
-        <select class="form-control" name="full_sheet_printer_option" id="full_sheet_printer_option">
+    <div class="input-row">
+      <div class="frm-input-wrap">
+      <input id="wrapped" class="col form-control" type="text" placeholder="Printer Label" name="label_printer" value="Label Printer" disabled/>
+      <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Width (In)" name="label_printer_width" id="label_printer_width"/>  
+      <input id="wrapped" class="col form-control page-size no-radius" type="number" step="0.01"  placeholder="Height (In)" name="label_printer_height" id="label_printer_height"/>
+        <select class="col form-control" name="label_printer_option" id="label_printer_option">
           <option>Select</option>
         </select>
+        <div class="margin-wrap" style="width: 30%;">
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="" name="label_printer_margin_top" id="label_printer_margin_top"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="" name="label_printer_margin_bottom" id="label_printer_margin_bottom"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="" name="label_printer_margin_left" id="label_printer_margin_left"/>
+          <input id="wrapped" class="col form-control page-size no-radius margin-field" type="number" step="0.01"  placeholder="" name="label_printer_margin_right" id="label_printer_margin_right"/>
       </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="input-group">
-      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="label_printer" value="Label Printer" disabled/>
-      <div class="input-group-addon">
-        <select class="form-control" name="label_printer_option" id="label_printer_option">
-          <option>Select</option>
-        </select>
+      <select class="col form-control" name="label_printer_orientation" id="label_printer_orientation">
+        <option>Select</option>
+        <option value="Portrait">Portrait</option>
+        <option value="Landscape">Landscape</option>
+        <option value="Automatic">Automatic</option>
+      </select>
       </div>
     </div>
   </div>
