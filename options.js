@@ -43,9 +43,9 @@ const field_names = [
 ];
 
 $(document).ready(function () {
-  console.log("Options Page Loaded! 4");
   // Create a WebSocket connection to the server
   const ws = new WebSocket("ws://localhost:9696");
+
   // var storage = chrome.storage.local;
   // Send the content of the div to the server
   ws.onopen = function () {
@@ -65,7 +65,7 @@ $(document).ready(function () {
     // Check the identifier or unique property
     if (data.id === "printerList") {
       updatePrinter(data);
-      updatePageSize();
+      updateFormValues();
     }
   };
 
@@ -81,9 +81,8 @@ $(document).ready(function () {
       for (const field_name of field_names) {
         const elts = document.getElementsByName(field_name);
         const elt = elts[0];
-        console.log(elt);
         const val = elt.value;
-        console.log(field_name, val);
+        console.log("FIELD NAME ", field_name, "VALUE IS", val);
         data[field_name] = val;
       }
 
@@ -112,7 +111,7 @@ $(document).ready(function () {
       id: "printerList",
       text: "list-printer",
     };
-    console.log(message);
+    console.log("LIST-PRINTER RESPONSE:", message);
     ws.send(JSON.stringify(message));
   });
 
@@ -151,7 +150,7 @@ $(document).ready(function () {
   }
 
   // function to set the page size if already saved
-  function updatePageSize() {
+  function updateFormValues() {
     const ws = new WebSocket("ws://localhost:9696");
     ws.onopen = function () {
       const message = {
