@@ -71,6 +71,9 @@ $(document).ready(function () {
 
   // Hide save message
   $("#save-msg").addClass("hide");
+  $("#saveData").on("blur", function(){
+    $("#save-msg").addClass("hide");
+  });
 
   $(function () {
     $("#printer").on("submit", function (event) {
@@ -102,6 +105,7 @@ $(document).ready(function () {
         const response = JSON.parse(event.data);
         console.log("SET-OPTION RESPONSE: ", response);
         //FIXME: Add some kind of spinner for feedback
+        $("#save-msg").removeClass("hide");
       };
     });
   });
