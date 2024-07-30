@@ -164,12 +164,12 @@ $(document).ready(function () {
     ws.onmessage = function (event) {
       const data = JSON.parse(event.data);
       console.log("GET-OPTIONS RESPONSE: ", data);
-      for ( const field_name of field_names ) {
+      for (const field_name of field_names) {
         const elts = document.getElementsByName(field_name);
         const elt = elts[0];
         console.log(elt);
         elt.value = data[field_name];
-        console.log("SET", elt, "VALUE TO ", data[field_name] );
+        console.log("SET", elt, "VALUE TO ", data[field_name]);
       }
     };
   }
