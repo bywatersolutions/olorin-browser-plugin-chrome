@@ -46,7 +46,6 @@ $(document).ready(function () {
   // Create a WebSocket connection to the server
   const ws = new WebSocket("ws://localhost:9696");
 
-  // var storage = chrome.storage.local;
   // Send the content of the div to the server
   ws.onopen = function () {
     const message = {
@@ -90,7 +89,7 @@ $(document).ready(function () {
       }
 
       console.log("CONFIGURATION:", data);
-      //chrome.storage.local.set(data);
+      
       const ws = new WebSocket("ws://localhost:9696");
       ws.onopen = function () {
         const message = {
@@ -126,30 +125,6 @@ $(document).ready(function () {
     lists.forEach((element) => {
       var option = $("<option />").val(element.name).text(element.name);
       selectElement.append(option);
-    });
-    chrome.storage.local.get("receipt_printer", function (value) {
-      if (value && value.receipt_printer)
-        $("#receipt_printer").val(value.receipt_printer);
-    });
-
-    chrome.storage.local.get("sticker_printer", function (value) {
-      if (value && value.sticker_printer)
-        $("#sticker_printer").val(value.sticker_printer);
-    });
-
-    chrome.storage.local.get("paper_printer", function (value) {
-      if (value && value.paper_printer)
-        $("#paper_printer").val(value.paper_printer);
-    });
-
-    chrome.storage.local.get("full_sheet_printer", function (value) {
-      if (value && value.full_sheet_printer)
-        $("#full_sheet_printer").val(value.full_sheet_printer);
-    });
-
-    chrome.storage.local.get("label_printer", function (value) {
-      if (value && value.label_printer)
-        $("#label_printer").val(value.label_printer);
     });
   }
 
