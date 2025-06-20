@@ -58,5 +58,6 @@ And then add this to the end of what you are looking to print
 </span>
 ```
 Lastly, to have this all go automatically, we will need to add some javascript in the system preference: IntranetSlipPrinterJS:
-
-Set timeout (function () {$(#webPrint”), trigger (‘click) ; } 1000) ;
+```javascript
+set timeout (function () {$(#webPrint”), trigger (‘click) ; } 1000) ;
+```
